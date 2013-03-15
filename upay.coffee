@@ -14,7 +14,7 @@ casper.then ->
 casper.run ->
   @echo("Checking...")
   events = @getHTML("#ctl00_ContentPlaceHolder1_GridView1")
-  if events.match(/[Aa]le [Vv]erses/)
+  if events.match(///#{casper.cli.args[2]}///)
     @echo("WHOOOAAAAAH!").exit(0)
   else
     @echo("Nothing.").exit(1)
